@@ -4,6 +4,8 @@ on:
 
 jobs:
   mirror_to_gitlab:
+    if: github.repository_owner == 'mgenet'
+
     runs-on: ubuntu-latest
 
     steps:
