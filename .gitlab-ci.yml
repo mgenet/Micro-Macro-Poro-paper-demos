@@ -40,10 +40,11 @@ stages:
 
 build_jupyterbook:
   stage: build
-  image: python:slim
+  image: ubuntu
   tags:
     - ci.inria.fr
   script:
+    - apt update; apt install -y npm nodejs
     - pip install -U jupyter-book
     - jupyter-book clean .
     - jupyter-book build .
